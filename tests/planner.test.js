@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {algorithmicPlan} from '../server/planner.js';
+const today=new Date(2026,10,25,10);
+const subjects=[{name:'DBMS',short:'DBMS',exam:'2026-11-30',confidence:35,difficulty:'Hard',topics:['SQL','Normalization','Indexing'],done:[true,false,false]},{name:'Networks',exam:'2026-12-10',confidence:75,difficulty:'Medium',topics:['TCP','Routing'],done:[true,true]}];
+test('returns requested horizon when there are active subjects',()=>assert.equal(algorithmicPlan(subjects,3,5,today).days.length,5));
+test('does not exceed daily minute budget',()=>{for(const d of algorithmicPlan(subjects,1,7,today).days)assert.ok(d.slots.reduce((a,s)=>a+s.minutes,0)<=60)});
+test('prioritizes subjects with nearer exams and lower confidence',()=>{const p=algorithmicPlan(subjects,1,1,today);assert.equal(p.days[0].slots[0].subject,'DBMS')});
+test('does not schedule an empty subject collection',()=>assert.deepEqual(algorithmicPlan([],2,7,today).days,[]));
+test('clamps long horizons and invalid budgets safely',()=>{const p=algorithmicPlan(subjects,0,99,today);assert.ok(p.days.length<=30)});
