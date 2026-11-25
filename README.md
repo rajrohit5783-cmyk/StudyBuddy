@@ -1,3 +1,4 @@
+
 # StudyBuddy 2.1 — deployable full-stack study companion
 
 StudyBuddy is a React + Vite frontend with an Express API. The app includes account registration/login, subject and syllabus tracking, an exam-aware study planner, Pomodoro sessions, study analytics, spaced-repetition flashcards, quizzes, a study coach, text-based PDF extraction, and `.ics` calendar export.
@@ -114,4 +115,5 @@ studybuddy-upgraded/
 ├── render.yaml           # Render Blueprint
 ├── .env.example
 └── package.json
-```
+# StudyBuddy
+01dc842c521c55a6758d8a8e3e300885763125b7
