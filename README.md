@@ -360,12 +360,6 @@ Ideas for future iterations:
 **Under the Supervision of:** Harshit Gupta  
 **Designation:** AI Trainer
 
-## 🙏 Acknowledgements
-
-We thank our project supervisor, **Harshit Gupta**, for his guidance and support. We also acknowledge the open-source communities and maintainers behind React, Vite, Node.js, Express, SQLite, and Ollama.
-
----
-
 <p align="center">
   <strong>“Small, consistent sessions beat last-minute panic.”</strong>
   <br />
