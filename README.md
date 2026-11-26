@@ -1,292 +1,584 @@
 # 🧠 StudyBuddy
-###       AI-Powered Study Planning & Progress Tracking Platform
+
+### AI-Powered Study Planning & Progress Tracking Platform
 
 <p align="center">
-  <strong>Study smarter. Stay consistent. Panic less. 🚀</strong>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Node.js-22+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express-4.21-000000?style=for-the-badge&logo=express&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ollama-Local_AI-ffffff?style=for-the-badge&logo=ollama&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
 </p>
 
 <p align="center">
-  An intelligent academic productivity platform designed to help students organize their syllabus, generate personalized study schedules, track learning progress, and get AI-powered study assistance.
+  <strong>Study Smarter. Stay Consistent. Panic Less. 🚀</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-2026-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/Express.js-API-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express"/>
-  <img src="https://img.shields.io/badge/Ollama-Local_AI-ffffff?style=for-the-badge&logo=ollama&logoColor=black" alt="Ollama"/>
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License"/>
+  A full-stack AI-assisted academic productivity platform that helps students organize subjects, generate personalized study schedules, track learning progress, and receive intelligent study assistance.
 </p>
+
+<p align="center">
+  <a href="https://studybuddy-nyrg.onrender.com/">🌐 Live Application</a> •
+  <a href="https://github.com/rajrohit5783-cmyk/StudyBuddy">📂 GitHub Repository</a>
+</p>
+
+---
+
+## 📌 Table of Contents
+
+- [Overview](#-overview)
+- [Why StudyBuddy?](#-why-studybuddy)
+- [Application Preview](#-application-preview)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [System Architecture](#-system-architecture)
+- [Intelligent Study Planner](#-intelligent-study-planner)
+- [Database Design](#-database-design)
+- [API Documentation](#-api-documentation)
+- [Installation](#-installation-and-setup)
+- [Environment Configuration](#-environment-configuration)
+- [Testing](#-testing)
+- [Project Structure](#-project-structure)
+- [Security](#-security-and-reliability)
+- [Future Enhancements](#-future-enhancements)
+- [Contributors](#-project-team)
+- [Acknowledgements](#-acknowledgements)
 
 ---
 
 ## 🌐 Overview
 
-**StudyBuddy** is a full-stack academic productivity application built to solve one of the most common student problems: knowing what to study, when to study it, and how to stay consistent.
+**StudyBuddy** is an AI-assisted study planning and academic productivity application developed to make student learning more organized, structured, and measurable.
 
-Traditional to-do lists help students remember tasks, but they don't necessarily help prioritize subjects, manage examination deadlines, or identify topics that require additional attention.
+Students often struggle with:
 
-StudyBuddy brings these capabilities together in one platform.
+- Managing multiple subjects simultaneously.
+- Prioritizing topics before examinations.
+- Maintaining consistent study schedules.
+- Identifying unfinished syllabus topics.
+- Tracking actual study time.
+- Revising previously learned concepts.
+- Finding reliable guidance when they get stuck.
 
-With an interactive dashboard, intelligent scheduling, topic-level progress tracking, and an AI-powered study coach, StudyBuddy aims to make academic preparation more organized and manageable.
+StudyBuddy addresses these challenges by bringing academic planning, progress monitoring, focused study sessions, revision tools, and AI-powered assistance into a unified platform.
 
-## ✨ Key Features
+Instead of functioning as just another task manager, StudyBuddy focuses on the entire study workflow:
 
-| Feature | Description |
+**Plan → Study → Track → Revise → Improve**
+
+---
+
+## 🎯 Why StudyBuddy?
+
+| Traditional Study Methods | StudyBuddy |
 |---|---|
-| 📊 Interactive Dashboard | View study summaries, preparation progress and upcoming examinations. |
-| 📚 Subject Management | Add subjects, examination dates, difficulty levels and syllabus topics. |
-| 🤖 AI Study Planner | Generate structured study schedules using an AI-assisted planning workflow. |
-| 🧠 AI Study Coach | Ask academic questions and receive AI-generated study guidance. |
-| 📈 Progress Tracking | Monitor completed topics and subject-level preparation. |
-| 🎯 Weak Topic Detection | Identify topics that may require additional revision using a confidence-based heuristic. |
-| ⏱️ Pomodoro Timer | Support focused study sessions. |
-| 🗂️ Flashcards | Provide a revision-oriented learning module. |
-| 📝 Quiz Generation API | Generate multiple-choice questions through the backend AI integration. |
-| 🌙 Theme Customization | Switch between light and dark appearances. |
-| 📱 Responsive Interface | Access the application through desktop and smaller-screen layouts. |
+| Manual timetable creation | AI-assisted study planning |
+| Unorganized subject tracking | Centralized subject management |
+| Difficult to prioritize topics | Exam and confidence-based prioritization |
+| No structured progress overview | Topic-level progress tracking |
+| Separate revision tools | Integrated flashcards and quizzes |
+| Searching for study guidance | Interactive AI Study Coach |
+| Manual study-time tracking | Focus sessions and analytics |
+
+---
 
 ## 🖥️ Application Preview
 
-### Dashboard
+StudyBuddy provides a clean, modern interface with a minimal design and an interactive workspace.
 
-The central workspace provides an overview of academic preparation, study activity, and quick actions.
+### 1. Dashboard
+
+The dashboard provides a centralized overview of academic activity, including completed topics, study time, sessions, flashcards, subjects, and upcoming examinations.
 
 ![StudyBuddy Dashboard](docs/images/dashboard.png)
 
-### AI-Generated Study Plan
+### 2. AI-Generated Study Plan
 
-StudyBuddy organizes subjects and topics into scheduled study sessions, considering available study time and academic priorities.
+Generate structured study schedules based on available study hours, examination dates, topic completion, subject confidence, and difficulty.
 
 ![StudyBuddy Study Plan](docs/images/study-plan.png)
 
-### AI Study Coach
+### 3. AI Study Coach
 
-The AI Coach provides an interactive interface for asking questions, understanding concepts, and seeking study recommendations.
+An interactive academic assistant that helps students understand concepts, prioritize subjects, and develop realistic study plans.
 
 ![StudyBuddy AI Coach](docs/images/ai-coach.png)
 
+> **Screenshot setup:** Upload your three actual screenshots to `docs/images/` using these exact filenames:
+>
+> - `dashboard.png`
+> - `study-plan.png`
+> - `ai-coach.png`
+>
+> Until these files are committed to GitHub, the preview images will not appear.
 
+---
+
+## ✨ Features
+
+### 📊 1. Interactive Dashboard
+
+- Overview of academic preparation.
+- Completed-topic statistics.
+- Total study-time calculation.
+- Study-session tracking.
+- Flashcards due for revision.
+- Upcoming examination information.
+- Quick navigation to important modules.
+
+### 📚 2. Subject Management
+
+- Create and manage subjects.
+- Add syllabus topics.
+- Set examination dates.
+- Assign subject difficulty.
+- Maintain confidence levels.
+- Mark individual topics as completed.
+- Monitor subject preparation.
+
+### 🤖 3. Intelligent Study Planner
+
+StudyBuddy provides two study-planning paths:
+
+**AI-Based Planning**
+- Uses a locally hosted Ollama model.
+- Generates structured study schedules.
+- Considers available hours and subject information.
+- Produces topic-based study sessions.
+
+**Algorithmic Fallback**
+- Works when AI generation is unavailable.
+- Prioritizes subjects using examination proximity.
+- Considers confidence and difficulty.
+- Accounts for unfinished topics.
+- Respects daily study-time limits.
+
+### ⏱️ 4. Pomodoro Focus Timer
+
+- Structured study sessions.
+- Focus-oriented learning workflow.
+- Session completion tracking.
+- Recorded study duration.
+
+### 🗂️ 5. Flashcard System
+
+- Create question-and-answer flashcards.
+- Review learning material.
+- Track revision activity.
+- Schedule subsequent reviews using an interval and ease-based review mechanism.
+
+### 📝 6. AI-Assisted Quiz Generation
+
+- Generate multiple-choice questions.
+- Select a subject and relevant topics.
+- Configure the number of questions.
+- Receive answer explanations.
+- Use built-in fallback questions when AI generation fails.
+
+### 🧠 7. AI Study Coach
+
+- Interactive chat interface.
+- Academic explanations.
+- Study prioritization.
+- Revision suggestions.
+- Contextual conversation history.
+- Local AI with fallback guidance.
+
+### 📄 8. PDF Document Processing
+
+- Upload syllabus PDFs.
+- Extract document text.
+- Store document metadata.
+- Generate flashcards from extracted text.
+
+### 📈 9. Academic Analytics
+
+- Total study duration.
+- Completed study sessions.
+- Study streak.
+- Weekly study activity.
+- Subject-wise topic completion.
+- Recent study history.
+
+### 🌙 10. Theme Customization
+
+- Light theme.
+- Dark theme.
+- Persistent theme preference.
+
+### 📅 11. Calendar Export
+
+- Export generated study schedules.
+- Download calendar events in `.ics` format.
+- Import supported calendar files into compatible calendar applications.
 
 ---
 
 ## ⚙️ Technology Stack
 
-StudyBuddy combines modern frontend technologies, backend development, and local AI integration.
+StudyBuddy uses a modern JavaScript-based full-stack architecture.
 
-### Frontend
+### Frontend Technologies
+
+| Technology | Implementation |
+|---|---|
+| React.js 18 | Component-based UI development |
+| Vite 5 | Frontend development and build tooling |
+| JavaScript ES Modules | Application logic |
+| HTML5 | Semantic application structure |
+| CSS3 | Responsive styling and themes |
+| Lucide React | Interface icons |
+
+### Backend Technologies
+
+| Technology | Implementation |
+|---|---|
+| Node.js | Server-side JavaScript runtime |
+| Express.js 4 | REST API and routing |
+| JWT | User authentication |
+| bcryptjs | Password hashing |
+| Multer | PDF file uploads |
+| pdf-parse | PDF text extraction |
+| Helmet | HTTP security headers |
+| CORS | Cross-origin request configuration |
+| express-rate-limit | API request limiting |
+| dotenv | Environment configuration |
+
+### Database
 
 | Technology | Purpose |
 |---|---|
-| React.js | Component-based user interface |
-| Vite | Development server and frontend build tooling |
-| HTML5 | Application structure |
-| CSS3 | Styling and responsive layouts |
-| JavaScript | Application logic and interactions |
-
-### Backend
-
-| Technology | Purpose |
-|---|---|
-| Node.js | JavaScript runtime environment |
-| Express.js | REST API and backend routing |
-| REST API | Communication between frontend and backend |
-| JSON | Request and response data format |
+| SQLite | Persistent application storage |
+| Node.js `node:sqlite` | Built-in SQLite database interface |
+| JSON serialization | Application state persistence |
 
 ### Artificial Intelligence
 
 | Technology | Purpose |
 |---|---|
-| Ollama | Local language-model integration |
-| Llama 3.2 (1B) | Default configured AI model |
-| AI-assisted planning | Structured study schedule generation |
-| AI Coach | Academic assistance and explanations |
-| Fallback algorithm | Rule-based scheduling when AI is unavailable |
+| Ollama | Local AI model runtime |
+| Llama 3.2 (1B) | Default configured language model |
+| Ollama Chat API | AI planning, coaching and quiz generation |
+| Algorithmic Planner | Non-AI scheduling fallback |
 
-### Additional Technologies
+### Development Tools
 
-- Browser localStorage for browser-side preferences and study data in the local-first implementation.
-- Node.js built-in test runner for planner testing.
-- Git and GitHub for version control and collaboration.
+- Git
+- GitHub
+- npm
+- VS Code
+- Postman
 
 ---
 
 ## 🏗️ System Architecture
 
-StudyBuddy follows a frontend-backend architecture with an optional local AI service.
+StudyBuddy follows a client-server architecture with a local AI integration layer.
 
 ```mermaid
 flowchart TD
-    A["👨‍🎓 Student"] --> B["React Frontend"]
-    B --> C["Express REST API"]
-    C --> D{"AI Service Available?"}
-    D -->|Yes| E["Ollama LLM"]
-    D -->|No| F["Deterministic Planner"]
-    E --> G["Structured AI Response"]
-    F --> H["Fallback Study Schedule"]
-    G --> I["API Response"]
-    H --> I
-    I --> B
-    B --> J["Dashboard and Study Plan"]
+    A["Student"] --> B["React + Vite Frontend"]
+
+    B --> C["Express.js Backend"]
+
+    C --> D["JWT Authentication"]
+    D --> E["Application Services"]
+
+    E --> F["SQLite Database"]
+
+    E --> G{"AI Available?"}
+
+    G -->|Yes| H["Ollama Local LLM"]
+    G -->|No| I["Algorithmic Fallback"]
+
+    H --> J["AI Generated Response"]
+    I --> K["Fallback Response"]
+
+    J --> L["API Response"]
+    K --> L
+
+    F --> L
+
+    L --> B
 ```
 
 ### Architecture Components
 
-**1. React Frontend**
+**1. Frontend Layer**
 
-- Handles user interaction.
-- Displays dashboard and study modules.
-- Manages application state.
-- Sends requests to backend endpoints.
+Built using React and Vite.
 
-**2. Node.js and Express Backend**
+Responsibilities:
+- Render application pages.
+- Manage user interactions.
+- Display study analytics.
+- Communicate with backend APIs.
+- Manage authentication state.
 
-- Processes incoming API requests.
-- Validates request information.
-- Handles planning and AI-related operations.
-- Returns structured JSON responses.
+**2. Backend Layer**
 
-**3. Ollama AI Integration**
+Built using Node.js and Express.
 
-- Connects to a locally hosted language model.
-- Generates AI-assisted study plans and coaching responses.
-- Uses configured model settings.
+Responsibilities:
+- Handle HTTP requests.
+- Authenticate users.
+- Validate incoming data.
+- Manage academic operations.
+- Coordinate AI requests.
+- Process uploaded documents.
 
-**4. Deterministic Fallback Engine**
+**3. Database Layer**
 
-- Provides an alternative when the AI service is unavailable.
-- Prioritizes subjects using examination proximity and confidence.
-- Allocates study sessions according to available time.
+Uses SQLite through Node.js's built-in `node:sqlite` module.
+
+Responsibilities:
+- Store user information.
+- Store subjects and topics.
+- Maintain study sessions.
+- Store flashcards and quizzes.
+- Save study plans and documents.
+
+**4. AI Layer**
+
+Uses Ollama for local language-model execution.
+
+Responsibilities:
+- Generate study plans.
+- Answer academic questions.
+- Generate quiz questions.
+
+**5. Fallback Layer**
+
+Uses a deterministic algorithm for study planning and predefined fallback responses for selected AI-powered operations.
 
 ---
 
-## 🧮 Intelligent Study Planning
+## 🧮 Intelligent Study Planner
 
-One of StudyBuddy's main capabilities is its dual-path scheduling approach.
+One of StudyBuddy's most important components is its intelligent scheduling engine.
 
-### AI-Based Planning
+The system combines AI-assisted scheduling with a deterministic fallback algorithm.
 
-When the configured Ollama service is available, the backend sends relevant study information to the language model to generate a structured schedule.
+### Priority Calculation
 
-### Algorithmic Fallback
+The algorithm evaluates subject priority using the following factors:
 
-When AI generation fails, the application uses a deterministic scheduling algorithm.
-
-The fallback planner considers:
-
-- Examination-date proximity.
+- Examination proximity.
 - Subject confidence.
-- Completed-topic count.
-- Available daily study hours.
-- Planning horizon.
-- Topic rotation across study sessions.
+- Subject difficulty.
+- Number of unfinished topics.
 
-### Planning Workflow
+The implemented priority score is:
 
-1. Collect subjects and their topics.
-2. Evaluate examination dates and preparation confidence.
-3. Receive the student's available study hours.
-4. Send a planning request to the backend.
-5. Attempt AI-assisted schedule generation.
-6. Use deterministic scheduling if AI is unavailable.
-7. Return the generated schedule to the frontend.
+\[
+P(s)=\frac{100}{D+2}+(100-C)\times0.65+H+2U
+\]
 
-This dual-path approach helps ensure that the basic planning functionality is not entirely dependent on AI availability.
+Where:
+
+| Variable | Meaning |
+|---|---|
+| \(P(s)\) | Subject priority score |
+| \(D\) | Days until examination |
+| \(C\) | Subject confidence (0–100) |
+| \(H\) | Difficulty contribution |
+| \(U\) | Number of unfinished topics |
+
+Difficulty contribution:
+
+| Difficulty | Score |
+|---|---:|
+| Easy | 0 |
+| Medium | 8 |
+| Hard | 16 |
+
+### Scheduling Workflow
+
+1. Retrieve the user's subjects and syllabus topics.
+2. Identify unfinished topics.
+3. Calculate subject priority scores.
+4. Sort subjects by priority.
+5. Allocate available study time.
+6. Generate study slots for the selected planning horizon.
+7. Save and return the generated schedule.
+
+The fallback planner supports a planning horizon of up to 30 days and constrains its daily time budget.
+
+### AI Planning Workflow
+
+When AI planning is enabled:
+
+1. The backend prepares the subject information.
+2. The information is sent to the configured Ollama model.
+3. Ollama generates a structured JSON response.
+4. The backend validates the generated schedule.
+5. The resulting plan is saved.
+
+If AI generation fails, the deterministic planner is used instead.
 
 ---
 
-## 🔌 Backend API Reference
+## 🗄️ Database Design
 
-The project includes the following documented API operations.
+StudyBuddy uses SQLite for persistent storage.
+
+The database is initialized through the `server/store.js` module.
+
+The application maintains the following logical data collections:
+
+| Collection | Stored Information |
+|---|---|
+| Users | Account details and password hashes |
+| Subjects | Subject name, exam date, confidence and difficulty |
+| Sessions | Completed study sessions and durations |
+| Flashcards | Questions, answers and revision information |
+| Chats | AI Coach conversation records |
+| Quizzes | Generated quiz information |
+| Documents | Uploaded PDF metadata and extracted text |
+| Plans | Generated study schedules |
+
+### Data Persistence
+
+- SQLite stores the application state.
+- The database uses a single state record.
+- Application data is serialized as JSON within the SQLite database.
+- WAL mode is enabled for database operation.
+- The application can migrate existing JSON state into SQLite during initialization.
+
+---
+
+## 🔌 API Documentation
+
+StudyBuddy exposes RESTful API endpoints through its Express backend.
+
+All protected routes require a valid JWT access token.
+
+### Authentication
 
 | Method | Endpoint | Description |
 |---|---|---|
-| POST | `/api/plan` | Generate a study plan |
-| POST | `/api/coach` | Submit a question to the AI Coach |
-| POST | `/api/quiz` | Request AI-generated quiz questions |
+| POST | `/api/auth/register` | Register a new account |
+| POST | `/api/auth/login` | Authenticate a user |
+| GET | `/api/auth/me` | Retrieve authenticated user information |
 
-### Example: Generate a Study Plan
+### Dashboard and Data
 
-**Request**
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/bootstrap` | Retrieve the user's application data |
+| GET | `/api/health` | Check server and Ollama availability |
+| GET | `/api/subjects` | Retrieve subjects |
 
-```http
-POST /api/plan
-Content-Type: application/json
-```
+### Subject Management
 
-The request contains subject information, completed-topic data, available daily hours, and the planning horizon.
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/subjects` | Create a subject |
+| PUT | `/api/subjects/:id` | Update a subject |
+| DELETE | `/api/subjects/:id` | Delete a subject |
 
-**Response concept**
+### Study Planning
 
-```json
-{
-  "source": "smart-fallback",
-  "days": [
-    {
-      "date": "2026-11-26",
-      "slots": [
-        {
-          "subject": "Computer Networks",
-          "duration": 50
-        }
-      ]
-    }
-  ]
-}
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/plan` | Generate and save a study plan |
+| GET | `/api/calendar.ics` | Export the latest plan as an ICS calendar |
 
-*Illustrative response structure; use the actual API response schema from the current source code.*
+### Study Sessions
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/sessions` | Record a completed session |
+| DELETE | `/api/sessions/:id` | Delete a study session |
+
+### Flashcards
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/flashcards` | Retrieve flashcards |
+| POST | `/api/flashcards` | Create a flashcard |
+| POST | `/api/flashcards/:id/review` | Record a flashcard review |
+
+### AI Services
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/coach` | Generate an AI Coach response |
+| POST | `/api/quiz` | Generate quiz questions |
+
+### Document Processing
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/documents` | Upload and extract a PDF |
+| POST | `/api/documents/:id/flashcards` | Generate flashcards from a document |
+
+### Analytics
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/analytics` | Retrieve academic analytics |
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation and Setup
 
-Follow these steps to run StudyBuddy locally.
+Follow these instructions to run StudyBuddy locally.
 
 ### Prerequisites
 
-Make sure you have:
+| Requirement | Version |
+|---|---|
+| Node.js | 22.5 or newer |
+| npm | Included with Node.js |
+| Git | Latest stable version |
+| Ollama | Optional, for local AI features |
 
-- Node.js installed.
-- npm installed.
-- Git installed.
-- A modern web browser.
-- Ollama installed if you want to use model-backed AI features.
-
-### 1. Clone the Repository
+### Step 1 — Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/rajrohit5783-cmyk/StudyBuddy.git
 ```
 
-### 2. Navigate to the Project
+### Step 2 — Navigate to the Project
 
 ```bash
 cd StudyBuddy
 ```
 
-### 3. Install Dependencies
+### Step 3 — Install Dependencies
 
 ```bash
 npm install
 ```
 
-If the project uses separate frontend and backend package directories, install dependencies in each directory using its respective package.json.
+### Step 4 — Configure Environment Variables
 
-### 4. Configure Environment Variables
-
-Create the required environment configuration based on the project's supplied `.env.example` or deployment documentation.
-
-For local AI configuration, the default model is:
+Create a `.env` file in the project root.
 
 ```env
+PORT=8787
+NODE_ENV=development
+
+JWT_SECRET=replace_with_a_secure_random_secret_at_least_32_characters
+
+OLLAMA_URL=http://127.0.0.1:11434
 OLLAMA_MODEL=llama3.2:1b
+
+DATA_DIR=./data
+UPLOAD_DIR=./uploads
+MAX_UPLOAD_MB=10
+
+CORS_ORIGINS=http://localhost:5173
 ```
 
-Keep credentials and private configuration out of Git.
+Use a strong, private JWT secret. Never commit your actual `.env` file to GitHub.
 
-### 5. Configure Ollama
+### Step 5 — Configure Ollama
 
-Install Ollama from:
+Download Ollama:
 
 https://ollama.com/
 
@@ -296,70 +588,183 @@ Pull the configured model:
 ollama pull llama3.2:1b
 ```
 
-Start the local Ollama service if it is not already running.
+Start the Ollama service.
 
-### 6. Start the Application
+The application can still use its fallback functionality when Ollama is unavailable.
 
-Use the development scripts defined in the project's package.json files.
+### Step 6 — Start StudyBuddy
 
-For example:
+Run:
 
 ```bash
 npm run dev
 ```
 
-Open the local URL displayed in your terminal.
+This command starts:
 
-> If the frontend and backend use separate scripts, start both services according to the repository's setup instructions.
+- Vite frontend server.
+- Express backend server.
+
+### Step 7 — Open the Application
+
+```text
+Frontend: http://localhost:5173
+Backend:  http://localhost:8787
+```
+
+You can now create an account and start using StudyBuddy.
 
 ---
 
 ## 🧪 Testing
 
-StudyBuddy includes automated tests for its deterministic scheduling logic.
+StudyBuddy includes automated tests for its deterministic scheduling algorithm.
 
-The planner tests cover:
-
-- Planning horizon constraints.
-- Daily time-budget limits.
-- Subject rotation.
-- Topic rotation.
-- Date formatting.
-- Empty input handling.
-
-Run the available tests using the test command defined in package.json.
+Run the test suite:
 
 ```bash
 npm test
 ```
 
-The exact command depends on the configured project scripts.
+Run the project checks:
+
+```bash
+npm run check
+```
+
+The existing planner tests cover:
+
+- Planning horizon constraints.
+- Daily study-time budget limits.
+- Subject prioritization.
+- Handling empty subject collections.
+- Invalid and excessive planning inputs.
 
 ---
 
 ## 📂 Project Structure
 
-The following is a logical overview of the application components. Check the actual repository before using it as an exact directory tree.
-
 ```text
 StudyBuddy/
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── modules/
-│   │   └── styles/
-│   └── package.json
+├── public/
+│
+├── src/
+│   ├── main.jsx
+│   └── styles.css
 │
 ├── server/
-│   ├── routes/
-│   ├── controllers/
+│   ├── index.js
 │   ├── planner.js
-│   └── services/
+│   └── store.js
+│
+├── tests/
+│   └── planner.test.js
 │
 ├── docs/
 │   └── images/
 │       ├── dashboard.png
 │       ├── study-plan.png
-│       └── ai
+│       └── ai-coach.png
+│
+├── data/
+│   └── studybuddy.sqlite
+│
+├── uploads/
+│
+├── index.html
+├── vite.config.js
+├── package.json
+├── package-lock.json
+├── .gitignore
+├── .env
+└── README.md
+```
+
+*Note: `data/`, `uploads/`, and `.env` are runtime/configuration locations, not files that should be committed with private data. The screenshot folder must be added by the project team.*
+
+---
+
+## 🔐 Security and Reliability
+
+StudyBuddy incorporates several backend security and reliability mechanisms.
+
+| Mechanism | Implementation |
+|---|---|
+| Authentication | JSON Web Tokens |
+| Password Protection | bcryptjs password hashing |
+| HTTP Security | Helmet |
+| API Protection | Express Rate Limit |
+| Cross-Origin Security | CORS origin validation |
+| Upload Restrictions | PDF-only upload filtering |
+| Upload Size Limit | Configurable maximum upload size |
+| User Data Isolation | Authenticated user ownership checks |
+| AI Timeout | 25-second request timeout |
+| Database Reliability | SQLite WAL mode |
+
+### Important Security Notes
+
+- Configure a strong JWT secret before production deployment.
+- Do not expose private environment variables.
+- Use persistent storage for the SQLite database in deployment.
+- Configure allowed CORS origins carefully.
+- Keep uploaded documents and user data protected.
+- Back up the application database regularly.
+
+---
+
+## 🚧 Future Enhancements
+
+StudyBuddy is designed to be extensible. Potential improvements include:
+
+- [ ] Advanced spaced-repetition algorithms.
+- [ ] More detailed learning analytics.
+- [ ] Study streak achievements and gamification.
+- [ ] Automated study reminders.
+- [ ] Improved quiz performance analysis.
+- [ ] Calendar synchronization.
+- [ ] Enhanced mobile experience.
+- [ ] Additional AI model support.
+- [ ] More detailed subject performance insights.
+- [ ] Automated end-to-end testing.
+
+---
+
+## 👨‍💻 Project Team
+
+Developed as a Major Project at **JECRC University, Jaipur, Rajasthan, India**.
+
+| Team Member | Registration Number |
+|---|---|
+| Vivek Rankawat | 25BCON2395 |
+| Rohit Raj | 25BCON1900 |
+| Rudraksh Pitti | 25BCON2488 |
+
+**Under the Supervision of:** Harshit Gupta  
+**Designation:** AI Trainer
+
+---
+
+## 🙌 Acknowledgements
+
+We would like to express our gratitude to our project supervisor, **Harshit Gupta**, for his guidance and support throughout the development of StudyBuddy.
+
+We also acknowledge the open-source communities behind React, Node.js, Express, SQLite, Vite, and Ollama for providing the technologies that made this project possible.
+
+---
+
+## 💡 Our Philosophy
+
+> "Small, consistent sessions beat last-minute panic."
+
+StudyBuddy is built around the belief that academic success is not only about studying longer, but also about studying with clarity, consistency, and purpose.
+
+**Plan your work. Focus deeply. Track your progress. Make every study session count.**
+
+<p align="center">
+  <strong>🧠 StudyBuddy — Study Smarter. Panic Less. 🎯</strong>
+</p>
+
+<p align="center">
+  Made with 💜 by the StudyBuddy Team
+</p>
