@@ -1,5 +1,5 @@
 # 🧠 StudyBuddy
-### AI-Powered Study Planning & Progress Tracking Platform
+###       AI-Powered Study Planning & Progress Tracking Platform
 
 <p align="center">
   <strong>Study smarter. Stay consistent. Panic less. 🚀</strong>
@@ -65,7 +65,7 @@ The AI Coach provides an interactive interface for asking questions, understandi
 
 ![StudyBuddy AI Coach](docs/images/ai-coach.png)
 
-> **Note:** Add your actual application screenshots to `docs/images/` using the filenames shown above.
+
 
 ---
 
